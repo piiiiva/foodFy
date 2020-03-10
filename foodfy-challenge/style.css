@@ -3,21 +3,28 @@
 .root {
     --color-text: #111111;
     --color-background: white;
-   
+    --color-author: #777777;
 }
 
 * {
     margin: 0;
     padding: 0;
     border: 0;
+    box-sizing: border-box; /* corrigir comprotamento do css no doc inteiro, sempre vai respeitar as bordas agora*/
+}
+
+html {
+    height: 100%;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
     background-color: var(--color-background);
     font-family: 'Roboto', sans-serif;
     color: var(--color-text);
-    margin-left: 230px;
-    margin-right: 230px;
 }
 
 header {
@@ -25,8 +32,7 @@ header {
     padding-bottom: 36px;
     display: flex;
     align-items: center;
-    
-
+    margin-left: 230px;    
 }
 
 nav {
@@ -43,7 +49,14 @@ nav a {
     padding-right: 20px;
 }
 
-main {
+/* === MAIN CONTENT === */
+
+.all-content {
+    flex: 1 0 auto;
+    padding-bottom: 20px;
+}
+
+.all-content main {
     background-color: #fbdfdb;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -51,6 +64,8 @@ main {
     max-width: 940px;
     border-radius: 30px;
     margin-bottom: 50px;
+    margin-left: 230px;
+    margin-right: 230px;
 }
 
 main > .main-content {
@@ -87,6 +102,14 @@ main > .main-content {
     margin-top: 66px;
 }
 
+/* === CARDS RECIPES === */
+
+span {
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 230px;
+}
+
 
 .cards {
     display: grid;
@@ -94,11 +117,18 @@ main > .main-content {
     gap: 20px;
     max-width: 300px;
     max-height: 140px;
+    margin-top: 20px;
+    margin-left: 230px;
+    margin-right: 230px;
+}
+
+.cards .card {
+    margin-bottom: 30px;
 }
 
 .card-image {
     width: 300px;
-    height: 140px;
+    height: auto;
 }
 
 .card-image img {
@@ -107,3 +137,28 @@ main > .main-content {
     height: 100%;
     border-radius: 20px;
 }
+
+.card-info {
+    margin-top: 20px;
+}
+
+.card-info .recipe-name {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.card-info .recipe-author {
+    font-size: 14px;
+    color: #777777;
+}
+
+
+
+.footer {
+    height: 62px;
+    background-color: #999999;
+    text-align: center;
+    flex-shrink: 0;
+     
+}
+
