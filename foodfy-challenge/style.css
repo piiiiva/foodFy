@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: border-box; /* corrigir comprotamento do css no doc inteiro, sempre vai respeitar as bordas agora*/
+    box-sizing: border-box; /* corrigir comportamento do css no doc inteiro, sempre vai respeitar as bordas agora*/
 }
 
 html {
@@ -20,19 +20,21 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    justify-content: center;
+    align:
 
     background-color: var(--color-background);
     font-family: 'Roboto', sans-serif;
     color: var(--color-text);
+    margin-right: auto;
+    margin-left: auto;
 }
 
 header {
-    padding-top: 36px;
-    padding-bottom: 36px;
     display: flex;
     align-items: center;
-    margin-left: 230px;    
+    padding: 36px 230px 36px 230px;    
+
 }
 
 nav {
@@ -54,16 +56,18 @@ nav a {
 .all-content {
     flex: 1 0 auto;
     padding-bottom: 20px;
+    align-content: center;
+    
 }
 
-.all-content main {
+ .all-content main {
     background-color: #fbdfdb;
     display: grid;
     grid-template-columns: 1fr 1fr;
     max-height: 366px;
-    max-width: 940px;
     border-radius: 30px;
     margin-bottom: 50px;
+    width: auto;
     margin-left: 230px;
     margin-right: 230px;
 }
@@ -75,6 +79,7 @@ main > .main-content {
     vertical-align: middle;
     margin-left: 60px;
     max-width: 316px;
+    
 }
 
 .main-content h1 {
@@ -100,7 +105,7 @@ main > .main-content {
 
 .main-image > img {
     margin-top: 66px;
-}
+} 
 
 /* === CARDS RECIPES === */
 
@@ -115,11 +120,11 @@ span {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-    max-width: 300px;
-    max-height: 140px;
     margin-top: 20px;
     margin-left: 230px;
     margin-right: 230px;
+    width: auto;
+
 }
 
 .cards .card {
@@ -156,9 +161,87 @@ span {
 
 .footer {
     height: 62px;
-    background-color: #999999;
+    background-color: #eeeeee;
+    color: #999999;
     text-align: center;
-    flex-shrink: 0;
-     
+    width: 100%;
+   
 }
 
+.footer p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+/*=== Modal === */
+
+.modal-overlay {
+    background-color: #000000;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 1;
+    
+
+}
+
+.modal {
+    background-color:#ffffff;
+    position: relative;
+    margin: 355px auto; /* Rever a centralizaçao*/
+    max-height: 413px;
+    max-width: 660px;;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;    
+
+}
+
+.modal-image { /* criei a div image para poder usar o overflow. A imagem é maior que os 200px de altura, se nao colcoar o overflow a img faz a div ficar maior, se usar o overflow ele corta a img */
+    
+    max-height: 200px;
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 15px; 
+    margin: 30px 30px 20px 30px;   
+}
+
+.modal-image img {
+    height: auto;
+    width: auto;
+}
+
+.modal-recipe {
+    text-align: center;
+    font-size: 24px;
+    line-height: 28px;
+
+}
+
+.modal-author {
+    text-align: center;
+    font-size: 18px;
+    line-height: 21px;
+    color: #777777;
+    padding-top: 5px;
+}
+
+.modal .close-modal {
+    margin-top: 60px; 
+    font-size: 16px;
+    line-height: 19px; 
+    color: #999999;
+
+    
+}
+
+.modal>.close-modal>p {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.modal-overlay .active {
+    opacity: 0.6;
+}
