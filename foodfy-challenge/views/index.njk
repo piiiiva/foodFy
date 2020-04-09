@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodfy</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-    <header>
-        <a href="/foodfy-challenge/index.html">
-            <img src="/foodfy-challenge/public/assets/logo.png" alt="food-logo">
-        </a>
-        <nav>
-            <a href="/foodfy-challenge/about.html">Sobre</a>
-            <a href="/foodfy-challenge/recipes.html">Receitas</a>
-        </nav>
-        
-    </header>
+{% extends 'layout.njk' %}
 
+{% block content %}
     <div class="all-content">
         <main>
             <div class="main-content">
@@ -31,94 +14,23 @@
             </div>
             
         </main>
-    
+        
         <span>Mais acessadas</span>
     
         <section class="cards">
+        {% for recipe in recipes %}
             <div class="card">
                 <div class="card-image">
-                    <img src="/assets/burger.png" alt="hamburger-image">
+                    <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
                 </div>
                 <div class="card-info">
-                    <p class="recipe-name">Triplo bacon burger</p>
-                    <p class="recipe-author">por Jorge Relato</p>
+                    <p class="recipe-name">{{recipe.title}}</p>
+                    <p class="recipe-author">por {{recipe.author}}</p>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="/assets/pizza.png" alt="pizza-image">
-                </div>
-                <div class="card-info">
-                    <p class="recipe-name">Pizza 4 estações</p>
-                    <p class="recipe-author">por Fabiana Melo</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="/assets/espaguete.png" alt="espaguete-image">
-                </div>
-                <div class="card-info">
-                    <p class="recipe-name">Espaguete ao alho</p>
-                    <p class="recipe-author">por Júlia Kinoto</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="/assets/lasanha.png" alt="lasanha-image">
-                </div>
-                <div class="card-info">
-                    <p class="recipe-name">Lasanha mac n' cheese</p>
-                    <p class="recipe-author">por Juliano Vieira</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="/assets/doce.png" alt="docinhos-pao-do-ceu-image">
-                </div>
-                <div class="card-info">
-                    <p class="recipe-name">Docinhos pão-do-céu</p>
-                    <p class="recipe-author">por Ricardo Golvea</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="/assets/asinhas.png" alt="asinhas-de-frango-image">
-                </div>
-                <div class="card-info">
-                    <p class="recipe-name">Asinhas de frango ao barbecue</p>
-                    <p class="recipe-author">por Vania Steroski</p>
-                </div>
-            </div>
-            
+            </div> 
+        {% endfor %}
+                      
         </section>
 
-        <div class="modal-overlay">
-            <div class="modal">
-                <div class="modal-content">
-                    <div class="modal-image">
-                        <img src="/assets/asinhas.png" alt="">
-                    </div>
-                    <p class="modal-recipe">Asinhas de frango ao barbecue</p>
-                    <p class="modal-author">por Vania Steroski</p>
-                </div>
-                <div class="close-modal">
-                    <p>Fechar modal</p>
-                </div>
-            </div>
-        </div>
-
     </div>
-    
-    <footer class="footer">
-        <p>Todos os direitos reservados, receitas Foodfy</p>
-    </footer>
-
-    <script src="script.js">
-        
-    </script>
-
-</body>
-
-
-
-</html>
+{% endblock content %}
