@@ -29,7 +29,8 @@ body {
 header {
     display: flex;
     align-items: center;
-    padding: 36px 230px 36px 230px;    
+    padding: 36px 0px;    
+    margin: 0% 16.4%;
 
 }
 
@@ -179,7 +180,7 @@ span {
 
 .recipe-page {
     max-width: 1400px;
-    margin: 0 230px;
+    margin: 0% 16.4%;
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
@@ -189,6 +190,7 @@ span {
 .recipe-page main {
     justify-content: center;
     margin-bottom: 50px;
+    max-width: 940px;
 }
 
 .recipe-page main .recipe-image { /* criei a div image para poder usar o overflow. A imagem é maior que os 200px de altura, se nao colcoar o overflow a img faz a div ficar maior, se usar o overflow ele corta a img */
@@ -219,8 +221,13 @@ span {
     padding-top: 5px;
 }
 
+.recipe-page .details {
+    max-width: 940px;
+}
+
 .recipe-info .details {
     margin-bottom: 39px;
+
 }
 
 .recipe-info .details .title-details {
