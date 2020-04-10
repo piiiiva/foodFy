@@ -1,16 +1,18 @@
-const modalOverlay = document.querySelector(".modal-overlay")
-const cards = document.querySelectorAll(".cards")
+const cards = document.querySelectorAll(".card")
+const infoDetails = document.querySelectorAll(".info-details")
+const button = document.querySelectorAll('.show-button')
 
 for (let card of cards) {
-    card.addEventListener("click", function(){
-        modalOverlay.classList.add('active')
+    card.addEventListener("click", function() {
+        const recipeId = card.getAttribute("id")
+        // newId = String.prototype.trim(recipeId)
+
+
+        window.location.href = `/recipes/${recipeId}`
     })
 }
 
+button.addEventListener("click", function(){
+    
 
-
-if (document.querySelector(".close-modal") != null) {
-    modalOverlay.querySelector(".close-modal").addEventListener("click", function(){
-        modalOverlay.classList.remove("active")
-    })
-}
+})

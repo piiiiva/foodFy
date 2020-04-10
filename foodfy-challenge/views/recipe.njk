@@ -5,26 +5,25 @@
     <div class="recipe-page">
         <main>
             <div class="recipe-image">
-                <img src="/assets/asinhas.png" alt="">
+                <img src="{{recipe.image}}" alt="">
             </div>
-            <p class="recipe-name">Asinhas de frango ao barbecue</p>
-            <p class="recipe-author">por Vania Steroski</p>
+            <p class="recipe-name">{{recipe.title}}</p>
+            <p class="recipe-author">por {{recipe.author}}</p>
         </main>
 
         <div class="recipe-info">
             <div class="details">
                 <div class="title-details">
                     <p>Ingredientes</p>
-                    <p class="show-button">Mostar</p>
+                    <span class="show-button">Mostar</span>
                 </div>
                 <div class="info-details">
                     <ul>
-                        <li>3 kg de carne moída</li>
-                        <li>300 g bacon</li>
-                        <li>1 Ovo</li>
-                        <li>3 colheres</li>
-                        <li>10 colheres</li>
-                        <li>30 ml de água gelada</li>
+                        {% for ingredient in recipe.ingredients %}
+                            <li>{{ingredient}}</li>
+                        {% endfor %}
+                        
+                        
                     </ul>
                 </div>
             </div>
@@ -32,16 +31,13 @@
             <div class="details">
                 <div class="title-details">
                     <p>Modo de preparo</p>
-                    <p class="show-button">Mostar</p>
+                    <span class="show-button">Mostar</span>
                 </div>
                 <div class="info-details">
                     <ul>
-                        <li>3 kg de carne moída</li>
-                        <li>300 g bacon</li>
-                        <li>1 Ovo</li>
-                        <li>3 colheres</li>
-                        <li>10 colheres</li>
-                        <li>30 ml de água gelada</li>
+                        {% for stepPreparation in recipe.preparation %}
+                            <li>{{stepPreparation}}</li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -49,11 +45,10 @@
             <div class="details">
                 <div class="title-details">
                     <p>Informações adicionais</p>
-                    <p class="show-button">Mostar</p>
+                    <span class="show-button">Mostar</span>
                 </div>
                 <div class="info-details">
-                    <p>Preaqueça a chapa, frigideira sieojiaso aeoijaio eoiajeioja aoiejaoisje aseiojaosijeio</p>
-                    <p>Você sabia que a receita que precede o hambúrguer aseiosaj a iasjeioaj</p>                   
+                    <p>{{recipe.information}}</p>
                 </div>
             </div>
 

@@ -130,6 +130,6 @@ module.exports = [
         'Despeje em assadeira retangular média, untada e leve ao forno médio (180°C), por aproximadamente 45 minutos. Depois de frio, polvilhe, com o',
         'açúcar de confeiteiro e corte em quadrados.'
       ],
-      information: ''
+      information: 'A Day é o meu pãozingo do céu!'
     }
   ];
