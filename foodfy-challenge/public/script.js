@@ -1,6 +1,5 @@
 const cards = document.querySelectorAll(".card")
-const infoDetails = document.querySelectorAll(".info-details")
-const button = document.querySelectorAll('.show-button')
+
 
 for (let card of cards) {
     card.addEventListener("click", function() {
@@ -12,7 +11,5 @@ for (let card of cards) {
     })
 }
 
-button.addEventListener("click", function(){
-    
 
-})
+
