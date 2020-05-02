@@ -1,7 +1,7 @@
 const express = require('express')
 const routes = express.Router()
 const foodFy = require('./controllers/foodFy')
-const admin = require('./controllers/admin')
+const recipesAdmin = require('./controllers/recipesAdmin')
 const recipes = require('./data')
 
 
@@ -14,10 +14,10 @@ routes.get('/recipes', foodFy.recipes)
 routes.get('/recipes/:index', foodFy.show)
 
 
-routes.get("/admin/recipes", admin.index); // Mostrar a lista de receitas
-// routes.get("/admin/recipes/create", recipes.create); // Mostrar formulário de nova receita
-// routes.get("/admin/recipes/:id", recipes.show); // Exibir detalhes de uma receita
-// routes.get("/admin/recipes/:id/edit", recipes.edit); // Mostrar formulário de edição de receita
+routes.get("/admin/recipes", recipesAdmin.index); // Mostrar a lista de receitas
+routes.get("/admin/recipes/create", recipesAdmin.create); // Mostrar formulário de nova receita
+routes.get("/admin/recipes/:id", recipesAdmin.show); // Exibir detalhes de uma receita
+routes.get("/admin/recipes/:id/edit", recipesAdmin.edit); // Mostrar formulário de edição de receita
 
 // routes.post("/admin/recipes", recipes.post); // Cadastrar nova receita
 // routes.put("/admin/recipes", recipes.put); // Editar uma receita
