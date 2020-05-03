@@ -1,22 +1,33 @@
 {% extends 'layout.njk' %}
 
 {% block head %}
-    <title>Receitas</title>
+    <title>Admin - Gerenciar Receitas</title>
 {% endblock head %}
+
+{% block header %}
+    <header class="admin">
+        <a href="/">
+        <img src="/assets/logo.png" alt="food-logo">
+        </a>
+    </header>   
+{% endblock header %}
 
 
 {% block content %}
-    <section class="cards">
+    <h1 class="main-title">Gerenciar receitas</h1>
+
+    <section class="cards admin">
         {% for recipe in recipes %}
             <div class="card" id="{{loop.index -1}}">
-            <div class="card-image">
-                <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                <div class="card-image">
+                    <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                </div>
+                <div class="card-info">
+                    <p class="recipe-name">{{recipe.title}}</p>
+                    <p class="recipe-author">por {{recipe.author}}</p>
+                    <a href="#">Visualizar</a>
+                </div>        
             </div>
-            <div class="card-info">
-                <p class="recipe-name">{{recipe.title}}</p>
-                <p class="recipe-author">por {{recipe.author}}</p>
-            </div>
-        </div>
         {% endfor %}
         
     </section>

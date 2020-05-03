@@ -12,19 +12,26 @@
 
 </head>
 <body>
-    <header>
+    {% block header %}
+    <div class="header-container">
+        <header>
         <a href="/">
             <img src="/assets/logo.png" alt="food-logo">
         </a>
         <nav>
             <a href="/about">Sobre</a>
             <a href="/recipes">Receitas</a>
-        </nav>
-        
-    </header>
+        </nav>     
+    </header> 
+    </div>
+    {% endblock header %}
 
+
+    <div class="main-container">
     {% block content %}
     {% endblock content %}
+    </div>
+    
     
     {% block footer %}
         <footer class="footer">
@@ -34,7 +41,6 @@
     
 
     <script src="/script.js"></script>
-    {# <script src="/script2.js"></script> #}
     <script src="/hideShow.js"></script>
 
 
