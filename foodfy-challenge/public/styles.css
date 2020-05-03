@@ -10,44 +10,48 @@
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: border-box; /* corrigir comportamento do css no doc inteiro, sempre vai respeitar as bordas agora*/
+    box-sizing: border-box;
+    
 }
 
 html, body {
-    height: 100%;
+    height: 100vh;
+    text-rendering: optimizeLegibility;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    
-    background-color: var(--color-background);
-    font-family: 'Roboto', sans-serif;
+
     color: var(--color-text);
+    background-color: var(--color-background);
 }
 
-header {
+header { 
+    padding: 36px 0px;    
+     
+}
+
+header .header-container {
     display: flex;
     align-items: center;
-    padding: 36px 0px;    
-    margin: 0% 16.4%;
-    margin-top: 0;
+    
+    width: 90%;
+    max-width: 940px;
+    margin: 0 auto;
 }
 
 header.admin {
     background-color: #111111;
-    margin: 0;
 }
 
-header.admin img {
-    margin-left: 230px;
+.admin .header-container img {
     filter: invert(100%);
 }
 
 nav {
-   padding-left: 122px;
-   
-   
+   padding-left: 122px; 
 }
 
 nav a {
@@ -56,6 +60,13 @@ nav a {
     line-height: 26px;
     text-decoration: none;
     padding-right: 20px;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 940px;
+    box-sizing: border-box;
+    margin: 0 auto;  
 }
 
 .currentPage {
@@ -77,9 +88,7 @@ nav a {
     max-height: 366px;
     border-radius: 30px;
     margin-bottom: 50px;
-    width: auto;
-    margin-left: 230px;
-    margin-right: 230px;
+    overflow: hidden;
 }
 
 main > .main-content {
@@ -122,7 +131,6 @@ main > .main-content {
 span {
     font-weight: bold;
     font-size: 24px;
-    margin-left: 230px;
 }
 
 
@@ -131,31 +139,20 @@ span {
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 20px;
     margin-top: 20px;
-    margin-left: 230px;
-    margin-right: 230px;
-    width: auto;
-
 }
-
-
 
 .cards .card {
     margin-bottom: 30px;
     cursor: pointer;
 }
 
-
-
-.card-image {
-    width: 300px;
-    height: auto;
-}
-
 .card-image img {
     display: block;
+    border-radius: 15px;
+
     width: 100%;
-    height: 100%;
-    border-radius: 20px;
+    max-width: 300px;
+    height: 140px;
 }
 
 .card-info {
@@ -181,8 +178,7 @@ span {
     color: #999999;
     text-align: center;
     width: 100%;
-    flex-shrink: 0; /*no tutorial diz que precisa usar, nao usei e deu certo. Estudar!!! */
-    margin-top: 20px;
+    margin-top: auto;
 }
 
 .footer p {
@@ -194,8 +190,6 @@ span {
 /*=== Recipe Page === */
 
 .recipe-page {
-    max-width: 1400px;
-    margin: 0% 16.4%;
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
@@ -205,7 +199,7 @@ span {
 .recipe-page main {
     justify-content: center;
     margin-bottom: 50px;
-    max-width: 940px;
+
 }
 
 .recipe-page main .recipe-image { /* criei a div image para poder usar o overflow. A imagem é maior que os 200px de altura, se nao colcoar o overflow a img faz a div ficar maior, se usar o overflow ele corta a img */
@@ -310,7 +304,7 @@ span {
 
 .allContentAbout {
     flex: 1 0 auto;
-    padding: 14px 230px 50px 230px;
+    padding: 14px 0 50px ;
 }
 
 .aboutContent h1 {
@@ -345,7 +339,6 @@ span {
 
 .main-title {
     margin-top: 50px;
-    margin-left: 230px;
     font-size: 24px;
     font-weight: 700;
     line-height: 28px;
@@ -357,16 +350,11 @@ span {
     display: flex;
 }
 
-.cards,.admin {
+.cards.admin {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
     margin-top: 20px;
-    margin-left: 230px;
-    margin-right: 230px;
-    width: auto;
-    
-
 }
 
 .admin .card {
@@ -376,10 +364,11 @@ span {
 
 
 
-.admin .card-image {
-    width: 172px;
-    height: 100%;
-    min-width: 172px;
+.admin .card-image img{
+    width: 100%;
+    max-width: 172px;
+    height: 80px;
+    border-radius: 8.57px;
 }
 
 .admin .card .card-info {
