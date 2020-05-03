@@ -84,7 +84,7 @@ nav a {
  .all-content main {
     background-color: #fbdfdb;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit , minmax(210px, 1fr));
     max-height: 366px;
     border-radius: 30px;
     margin-bottom: 50px;
@@ -119,12 +119,9 @@ main > .main-content {
 .main-image {
     text-align: right;
     margin-right: 100px;
+    margin-top: 66px;
     
 }
-
-.main-image > img {
-    margin-top: 66px;
-} 
 
 /* === CARDS RECIPES === */
 
@@ -136,14 +133,16 @@ span {
 
 .cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     column-gap: 20px;
     margin-top: 20px;
+    justify-items: center;
 }
 
 .cards .card {
     margin-bottom: 30px;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .card-image img {
