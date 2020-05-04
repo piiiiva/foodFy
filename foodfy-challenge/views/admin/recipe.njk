@@ -1,9 +1,21 @@
 {% extends 'layout.njk' %}
 
+{% block head %}
+    <title>Admin - Gerenciar Receitas</title>
+{% endblock head %}
+
+{% block header %}
+    {% include 'admin/_headerAdmin.njk' %}
+{% endblock header %}
+
 {% block content %}
 
-    <div class="recipe-page">
+    <div class="recipe-page admin">
         <main>
+            <div class="header-contents">
+                <h2>Receita: {{recipe.title}}</h2>
+                <a href="#">Editar receita</a>
+            </div>
             <div class="recipe-image">
                 <img src="{{recipe.image}}" alt="">
             </div>
