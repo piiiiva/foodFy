@@ -199,7 +199,9 @@ span {
     
 }
 
-.recipe-page.admin {
+.recipe-page.admin,
+.create-page,
+.edit-page {
     margin-top: 50px;
 }
 
@@ -403,8 +405,9 @@ span {
     color: #6558c3;
 }
 
+
 /* Admin Recipe */
-.recipe-page.admin .header-contents {
+.header-contents {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -428,6 +431,66 @@ span {
     font-weight: 700;
     color: #ffffff;
     text-decoration: none;
+}
 
 
+
+/* ===CREATE PAGE=== */
+form .item {
+    margin-top: 30px;
+}
+
+form .item div:nth-child(1) {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;   
+}
+
+/* =FORM= */
+
+input, textarea {
+    width: 100%;
+    /* outline: none; */
+
+    margin-top: 10px;
+
+    font-size: 16px;
+    line-height: 19px;
+
+    height: 49px;
+
+    border: solid 1px #DDDDDD;
+    border-radius: 4px;
+    background: #ffffff;
+
+    resize: vertical;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: 500;
+    color: #999;
+}
+
+
+form .item:nth-last-child(1) textarea {
+    height: 257px;
+}
+
+form .item button {
+    color: #6558C3;
+    text-decoration: none;
+    outline: none;
+    background-color: #ffffff;
+
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+}
+
+/* === EDIT PAGE === */
+
+.header-contents .delete-button {
+    background-color: #DC4747;
 }

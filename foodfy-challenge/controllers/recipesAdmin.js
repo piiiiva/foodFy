@@ -5,7 +5,7 @@ exports.index = function (req, res) {
 }
 
 exports.create = function (req, res) {
-    return res.redirect('admin/index')
+    return res.render('admin/create')
 }
 
 

@@ -1,0 +1,67 @@
+<div class="item">
+    <div>Nome da receita</div>
+    <input 
+    type="text"
+    name="recipeName"
+    placeholder="Insira o link da imagem"
+    >
+</div>
+
+<div class="item">
+    <div>Imagem da receita</div>
+    <input 
+    type="url"
+    name="image_url"
+    placeholder="Insira o link da imagem"
+    >
+</div>
+
+<div class="item">
+    <div>Ingredientes</div>
+    <div id="ingredients">
+        <div class="ingredient">
+            <input 
+            type="text" 
+            name="ingredients[]" 
+            value="" 
+            placeholder="Adicione um ingrediente por vez" 
+            />
+        </div>
+    </div>
+    <button 
+    type="button" 
+    class="add-ingredient"
+    >Adicionar novo ingrediente
+    </button>
+</div>
+
+
+<div class="item">
+    <div>Modo de preparo</div>
+    <div id="preparations">
+        <div class="preparation">
+            <input 
+            type="text" 
+            name="preparations[]" 
+            value="" 
+            placeholder="Adicione os modos por etapa" 
+            />
+        </div>
+    </div>
+    <button 
+    type="button" 
+    class="add-preparation"
+    >Adicionar novo passo
+    </button>
+</div>
+
+
+<div class="item">
+    <div>Informações adicionais</div>
+    <textarea 
+    name="informations" 
+    id="info"
+    >
+    </textarea>
+    
+</div>
