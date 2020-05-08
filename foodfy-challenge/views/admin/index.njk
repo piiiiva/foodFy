@@ -10,22 +10,30 @@
 
 
 {% block content %}
-    <h1 class="main-title">Gerenciar receitas</h1>
-
-    <section class="cards admin">
-        {% for recipe in recipes %}
-            <div class="card" id="{{loop.index -1}}">
-                <div class="card-image">
-                    <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
-                </div>
-                <div class="card-info">
-                    <p class="recipe-name">{{recipe.title}}</p>
-                    <p class="recipe-author">por {{recipe.author}}</p>
-                    <a href="#">Visualizar</a>
-                </div>        
+    <div class="index-admin">
+        <div class="header-contents">
+            <h2>Gerenciar Receitas</h2>
+            <div>
+                <a class="form-button" href="/admin/recipes/create">Nova Receita</a>
             </div>
-        {% endfor %}
-        
-    </section>
+        </div>
+
+
+        <section class="cards admin">
+            {% for recipe in recipes %}
+                <div class="card" id="{{loop.index -1}}">
+                    <div class="card-image">
+                        <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+                    </div>
+                    <div class="card-info">
+                        <p class="recipe-name">{{recipe.title}}</p>
+                        <p class="recipe-author">por {{recipe.author}}</p>
+                        <a href="#">Visualizar</a>
+                    </div>        
+                </div>
+            {% endfor %}
+            
+        </section>
+    </div>
 {% endblock content %}
        

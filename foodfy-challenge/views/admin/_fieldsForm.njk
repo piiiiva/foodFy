@@ -3,7 +3,8 @@
     <input 
     type="text"
     name="recipeName"
-    placeholder="Insira o link da imagem"
+    placeholder="Insira o nome da receita"
+    value="{{recipe.title}}"
     >
 </div>
 
@@ -13,6 +14,7 @@
     type="url"
     name="image_url"
     placeholder="Insira o link da imagem"
+    value="{{recipe.image}}"
     >
 </div>
 
@@ -21,9 +23,9 @@
     <div id="ingredients">
         <div class="ingredient">
             <input 
-            type="text" 
+            type="text"
             name="ingredients[]" 
-            value="" 
+            value="{{recipe.ingredients}}" 
             placeholder="Adicione um ingrediente por vez" 
             />
         </div>
@@ -43,7 +45,7 @@
             <input 
             type="text" 
             name="preparations[]" 
-            value="" 
+            value="{{recipe.preparation}}" 
             placeholder="Adicione os modos por etapa" 
             />
         </div>
@@ -61,7 +63,9 @@
     <textarea 
     name="informations" 
     id="info"
+    value="{{recipe.information}}"
     >
+    {{recipe.information}}
     </textarea>
     
 </div>

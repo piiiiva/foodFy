@@ -199,6 +199,7 @@ span {
     
 }
 
+.index-admin,
 .recipe-page.admin,
 .create-page,
 .edit-page {
@@ -347,14 +348,6 @@ span {
 
 /* === Admin INDEX === */
 
-.main-title {
-    margin-top: 50px;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 28px;
-
-    color: #111111;
-}
 
 .admin .card {
     display: flex;
@@ -421,7 +414,7 @@ span {
     color: #111111;
 }
 
-.header-contents a {
+.header-contents .form-button {
     background-color: #6558c3;
     border-radius: 4px;
     padding: 8px 16px;
