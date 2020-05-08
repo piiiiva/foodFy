@@ -1,4 +1,6 @@
 const recipes = require('../data')
+const fs = require('fs')
+const data = require('../data.json')
 
 exports.index = function (req, res) {
     return res.render('admin/index', { recipes })
@@ -9,7 +11,22 @@ exports.create = function (req, res) {
 }
 
 exports.post = function (req, res) {
-    res.send("Tá no caminho")
+    const keys = Object.keys(req.body)
+
+    for (key of keys) {
+        if (req.body[key] == "")
+            return "Por favor preencha todos o campos"
+    }
+
+    data.recipes.push({
+        ...req.body
+    })
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        if (err) return res.send("Write file error!!!")
+    })
+
+    return res.redirect('/admin/recipes')
 }
 
 exports.show = function(req, res){

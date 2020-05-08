@@ -14,6 +14,7 @@ routes.get('/recipes', foodFy.recipes)
 routes.get('/recipes/:index', foodFy.show)
 
 
+// routes.get("/admin", recipesAdmin.index); // Mostrar a lista de receitas
 routes.get("/admin/recipes", recipesAdmin.index); // Mostrar a lista de receitas
 routes.get("/admin/recipes/create", recipesAdmin.create); // Mostrar formulário de nova receita
 routes.get("/admin/recipes/:id", recipesAdmin.show); // Exibir detalhes de uma receita

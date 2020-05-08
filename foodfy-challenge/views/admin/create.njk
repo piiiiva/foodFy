@@ -7,9 +7,8 @@
 {% block content %}
 
     <div class="create-page">
-        
-
-        <form action="">
+       
+        <form method="POST" action="/admin/recipes" >
             <div class="header-contents">
                 <h2>Criando receita</h2>
                 <button type="submit" class="form-button">Salvar receita</button>
@@ -17,6 +16,7 @@
 
             {% include 'admin/_fieldsForm.njk'%}     
         </form>
+
     </div>
 
 {% endblock content %}
