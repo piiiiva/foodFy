@@ -2,7 +2,7 @@
     <div>Nome da receita</div>
     <input 
     type="text"
-    name="recipeName"
+    name="title"
     placeholder="Insira o nome da receita"
     value="{{recipe.title}}"
     >
@@ -12,9 +12,19 @@
     <div>Imagem da receita</div>
     <input 
     type="url"
-    name="image_url"
+    name="image"
     placeholder="Insira o link da imagem"
     value="{{recipe.image}}"
+    >
+</div>
+
+<div class="item">
+    <div>Autor da receita</div>
+    <input 
+    type="text"
+    name="author"
+    placeholder="Insira o nome do autor da receita"
+    value="{{recipe.author}}"
     >
 </div>
 
@@ -37,7 +47,6 @@
     </button>
 </div>
 
-
 <div class="item">
     <div>Modo de preparo</div>
     <div id="preparations">
@@ -57,15 +66,14 @@
     </button>
 </div>
 
-
 <div class="item">
     <div>Informações adicionais</div>
     <textarea 
-    name="informations" 
+    name="information" 
     id="info"
     value="{{recipe.information}}"
     >
-    {{recipe.information}}
+        {{recipe.information}}
     </textarea>
     
 </div>
