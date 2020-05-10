@@ -1,0 +1,24 @@
+{% extends 'layout.njk' %}
+
+{% block header %}
+    {% include 'admin/_headerAdmin.njk' %}
+{% endblock header %}
+
+{% block content %}
+
+    <div class="edit-page">        
+        <form action="">
+            <div class="header-contents">
+                <h2>Editando receita</h2>
+                <div>
+                    <button type="submit" class="form-button delete-button">Deletar</button>
+                    <button type="submit" class="form-button">Salvar receita</button>
+                </div>
+            </div>
+
+            {% include 'admin/_fieldsForm.njk'%}     
+            
+        </form>
+    </div>
+
+{% endblock content %}
