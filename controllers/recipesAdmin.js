@@ -18,8 +18,30 @@ exports.post = function (req, res) {
             return "Por favor preencha todos o campos"
     }
 
+    const { title, image, author, ingredients, preparations, information } = req.body
+    
+    // let ingredientsReplaced = []
+
+    // for (let ingredient of ingredients) {
+    //     ingredient.replace(/\s{2,}/g, ' ')
+    // }
+
+    const filteredIngredients = ingredients.filter(function(ingredient){
+        return ingredient != ""
+    })
+
+    const filteredPreparations = preparations.filter((function(preparation){
+        
+        return preparation != ""
+    }))
+
     data.recipes.push({
-        ...req.body
+        title, 
+        image, 
+        author, 
+        ingredients: filteredIngredients, 
+        preparations: filteredPreparations, 
+        information
     })
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
