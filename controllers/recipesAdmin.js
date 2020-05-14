@@ -27,7 +27,6 @@ exports.post = function (req, res) {
 
     const preparationsReplaced = preparations.map(preparation =>
         preparation.trim() 
-        // ingredient.replace(/\s{2,}/g, ' ')
     )
 
     function isEmpty (value) {
@@ -43,7 +42,7 @@ exports.post = function (req, res) {
         author, 
         ingredients: isEmpty(ingredientsReplaced), 
         preparations: isEmpty(preparationsReplaced), 
-        information
+        information: information.trim()
     })
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
@@ -79,4 +78,45 @@ exports.edit = function(req, res) {
     }
 
     return res.render('admin/edit', { recipe })
+}
+
+exports.put = function (req, res) {
+    const recipeIndex = req.params.id
+    const foundRecipe = data.recipes[recipeIndex]
+
+    if (!foundRecipe) return res.send('Receita não encontrada!')
+
+    const { title, image, author, ingredients, preparations, information } = req.body
+
+    const ingredientsReplaced = ingredients.map(ingredient =>
+        ingredient.trim() 
+    )
+
+    const preparationsReplaced = preparations.map(preparation =>
+        preparation.trim() 
+    )
+
+    function isEmpty (value) {
+        newArray = value.filter(function(item){
+            return item != ""
+        })
+        return newArray
+    }
+
+    const recipes = {
+        title,
+        image,
+        author,
+        ingredients: isEmpty(ingredientsReplaced), 
+        preparations: isEmpty(preparationsReplaced), 
+        information: information.trim()
+    }
+
+    data.recipes[recipeIndex] = recipes
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        if (err) return res.send("Write file error!!!")
+    })
+
+    return res.redirect(`/admin/recipes/${recipeIndex}`)
 }
