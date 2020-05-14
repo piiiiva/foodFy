@@ -20,27 +20,29 @@ exports.post = function (req, res) {
 
     const { title, image, author, ingredients, preparations, information } = req.body
     
-    // let ingredientsReplaced = []
+    const ingredientsReplaced = ingredients.map(ingredient =>
+        ingredient.trim() 
+        // ingredient.replace(/\s{2,}/g, ' ')
+    )
 
-    // for (let ingredient of ingredients) {
-    //     ingredient.replace(/\s{2,}/g, ' ')
-    // }
+    const preparationsReplaced = preparations.map(preparation =>
+        preparation.trim() 
+        // ingredient.replace(/\s{2,}/g, ' ')
+    )
 
-    const filteredIngredients = ingredients.filter(function(ingredient){
-        return ingredient != ""
-    })
-
-    const filteredPreparations = preparations.filter((function(preparation){
-        
-        return preparation != ""
-    }))
+    function isEmpty (value) {
+        newArray = value.filter(function(item){
+            return item != ""
+        })
+        return newArray
+    }
 
     data.recipes.push({
         title, 
         image, 
         author, 
-        ingredients: filteredIngredients, 
-        preparations: filteredPreparations, 
+        ingredients: isEmpty(ingredientsReplaced), 
+        preparations: isEmpty(preparationsReplaced), 
         information
     })
 
