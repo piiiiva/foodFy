@@ -21,7 +21,7 @@ routes.get("/admin/recipes/:id", recipesAdmin.show); // Exibir detalhes de uma r
 routes.get("/admin/recipes/:id/edit", recipesAdmin.edit); // Mostrar formulário de edição de receita
 routes.post("/admin/recipes", recipesAdmin.post); // Cadastrar nova receita
 routes.put("/admin/recipes/:id", recipesAdmin.put); // Editar uma receita
+routes.delete("/admin/recipes", recipesAdmin.delete); // Deletar uma receita
 
-// routes.delete("/admin/recipes", recipesAdmin.delete); // Deletar uma receita
 
 module.exports = routes

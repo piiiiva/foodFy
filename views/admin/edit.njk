@@ -11,14 +11,17 @@
             <div class="header-contents">
                 <h2>Editando receita</h2>
                 <div>
-                    <button type="submit" class="form-button delete-button">Deletar</button>
                     <button type="submit" class="form-button">Salvar receita</button>
                 </div>
             </div>
 
             {% include 'admin/_fieldsForm.njk'%}                
         </form>
-        <input type="hidden" name="id" value={{recipe.id}}>
+        <form action="/admin/recipes?_method=DELETE" method="POST">
+            <input type="hidden" name="id" value={{recipe.id}}>
+            <button type="submit" class="form-button delete-button">Deletar</button>
+        </form>
     </div>
 
+<script src="/addItensInput.js"></script>
 {% endblock content %}

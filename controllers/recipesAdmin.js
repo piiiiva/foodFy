@@ -15,7 +15,7 @@ exports.post = function (req, res) {
 
     for (key of keys) {
         if (req.body[key] == "")
-            return "Por favor preencha todos o campos"
+            return res.send ("Por favor preencha todos o campos")
     }
 
     const { title, image, author, ingredients, preparations, information } = req.body
@@ -119,4 +119,30 @@ exports.put = function (req, res) {
     })
 
     return res.redirect(`/admin/recipes/${recipeIndex}`)
+}
+
+exports.delete = function (req, res) {
+    const { id } = req.body
+    // const recipeIndex = req.params.id
+    // const recipe = data.recipes[recipeIndex]
+
+    // const index = data.recipes.indexOf(recipe)
+
+    const filteredRecipes = data.recipes.filter(function(recipe){
+        return data.recipes.indexOf(recipe) != id
+    })
+
+    data.recipes = filteredRecipes
+    
+    // function deleteRecipe () {
+    //     if (index > -1) {
+    //         return data.recipes.splice(index, 1)
+    //     }
+    // }
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+        if (err) return res.send("Write file error!!!")
+    })
+
+    return res.redirect('/admin/recipes')
 }

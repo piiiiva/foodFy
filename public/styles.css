@@ -439,6 +439,9 @@ form .item div:nth-child(1) {
     font-weight: 700;   
 }
 
+
+
+
 /* =FORM= */
 
 input, textarea {
@@ -480,6 +483,34 @@ form .item button {
     font-size: 16px;
     line-height: 19px;
     font-weight: 700;
+}
+
+#ingredients,
+#preparations {
+    display: flex;
+    flex-direction: column;
+}
+
+#ingredients .ingredient,
+#preparations .preparation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#ingredients .ingredient div,
+#preparations .preparation div {
+    width: 100%;
+}
+
+form .item .btn_delete_field {
+    margin-left: 8px;
+    color: #ffffff;
+    background-color: #6558C3;
+    padding: 4px 8px;
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: normal;
 }
 
 /* === EDIT PAGE === */
