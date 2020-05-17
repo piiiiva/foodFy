@@ -123,22 +123,12 @@ exports.put = function (req, res) {
 
 exports.delete = function (req, res) {
     const { id } = req.body
-    // const recipeIndex = req.params.id
-    // const recipe = data.recipes[recipeIndex]
-
-    // const index = data.recipes.indexOf(recipe)
 
     const filteredRecipes = data.recipes.filter(function(recipe){
         return data.recipes.indexOf(recipe) != id
     })
 
     data.recipes = filteredRecipes
-    
-    // function deleteRecipe () {
-    //     if (index > -1) {
-    //         return data.recipes.splice(index, 1)
-    //     }
-    // }
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
         if (err) return res.send("Write file error!!!")
