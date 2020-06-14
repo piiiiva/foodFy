@@ -24,6 +24,7 @@ routes.post('/admin/recipes', recipesAdmin.post) // Cadastrar nova receita
 routes.put('/admin/recipes/:id', recipesAdmin.put) // Editar uma receita
 routes.delete('/admin/recipes', recipesAdmin.delete) // Deletar uma receita
 
+routes.get('/admin/chefs', chefsAdmin.index)
 routes.get('/admin/chefs/create', chefsAdmin.create)
 
 module.exports = routes
