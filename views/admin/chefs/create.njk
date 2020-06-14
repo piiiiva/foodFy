@@ -1,0 +1,24 @@
+{% extends 'layout.njk' %}
+
+{% block header %}
+    {% include 'admin/_headerAdmin.njk' %}
+{% endblock header %}
+
+{% block content %}
+
+    <div class="create-page">
+       
+        <form method="POST" action="/admin/recipes" >
+            <div class="header-contents">
+                <h2>Criando Chef</h2>
+                <button type="submit" class="form-button">Salvar chef</button>
+            </div>
+
+            {% include 'admin/chefs/_fieldsForm.njk'%}     
+        </form>
+
+    </div>
+
+    <script src="/addItensInput.js"></script>
+
+{% endblock content %}

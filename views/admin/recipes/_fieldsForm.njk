@@ -1,5 +1,5 @@
 <div class="item">
-    <div>Nome da receita</div>
+    <label>Nome da receita</label>
     <input 
     type="text"
     name="title"
@@ -9,7 +9,7 @@
 </div>
 
 <div class="item">
-    <div>Imagem da receita</div>
+    <label>Imagem da receita</label>
     <input 
     type="url"
     name="image"
@@ -19,7 +19,7 @@
 </div>
 
 <div class="item">
-    <div>Autor da receita</div>
+    <label>Autor da receita</label>
     <input 
     type="text"
     name="author"
@@ -29,7 +29,7 @@
 </div>
 
 <div class="item">
-    <div>Ingredientes</div>
+    <label>Ingredientes</label>
     <div id="ingredients">
     {% if recipe.ingredients %}
         {% for ingredient in recipe.ingredients %}

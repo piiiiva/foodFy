@@ -3,11 +3,11 @@ const fs = require('fs')
 const data = require('../data.json')
 
 exports.index = function (req, res) {
-    return res.render('admin/index', { recipes: data.recipes })
+    return res.render('admin/recipes/index', { recipes: data.recipes })
 }
 
 exports.create = function (req, res) {
-    return res.render('admin/create')
+    return res.render('admin/recipes/create')
 }
 
 exports.post = function (req, res) {
@@ -63,7 +63,7 @@ exports.show = function(req, res){
         ...foundRecipe
     }
 
-    return res.render('admin/recipe', { recipe })
+    return res.render('admin/recipes/recipe', { recipe })
 }
 
 exports.edit = function(req, res) {
@@ -77,7 +77,7 @@ exports.edit = function(req, res) {
         ...foundRecipe
     }
 
-    return res.render('admin/edit', { recipe })
+    return res.render('admin/recipes/edit', { recipe })
 }
 
 exports.put = function (req, res) {
