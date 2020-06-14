@@ -551,11 +551,9 @@ form .item .btn_delete_field {
 .chef main .avatar-image {
     height: 200px;
     width: 200px;
-    margin-bottom: 50px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
+       
+    display: block;
+    margin: 0 auto 50px auto;
 }
 
 .chef main .avatar-image img {
