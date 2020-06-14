@@ -26,5 +26,6 @@ routes.delete('/admin/recipes', recipesAdmin.delete) // Deletar uma receita
 
 routes.get('/admin/chefs', chefsAdmin.index)
 routes.get('/admin/chefs/create', chefsAdmin.create)
+routes.get('/admin/chefs/:id', chefsAdmin.show)
 
 module.exports = routes

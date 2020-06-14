@@ -546,3 +546,25 @@ form .item .btn_delete_field {
 .index-admin.chef .header-contents {
     margin-bottom: 30px;
 }
+
+/* Chef show */
+.chef main .avatar-image {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 50px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chef main .avatar-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.admin .card .card-info a {
+    margin-top: 10px;
+}
