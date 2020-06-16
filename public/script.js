@@ -12,5 +12,12 @@ for (let card of cards) {
     })
 }
 
+// const currentPage = location.pathname
+const menuItems = document.querySelectorAll('header .header-container nav a')
 
+for (item of menuItems) {
+    if (currentPage.includes(item.getAttribute("href"))) {
+        item.classList.add("menu-active")        
+    }    
+}
 

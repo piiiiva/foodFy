@@ -44,6 +44,22 @@ header .header-container {
     
 }
 
+nav {
+   margin-left: 122px; 
+}
+
+nav a {
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 26px;
+    text-decoration: none;
+    padding-right: 20px;
+}
+
+.header-container .menu-active {
+    font-weight: 700;
+}
+
 header.admin {
     background-color: #111111;
 
@@ -53,16 +69,21 @@ header.admin {
     filter: invert(100%);
 }
 
-nav {
-   padding-left: 122px; 
+.admin .header-container nav {
+    display: flex;
+    margin-left: 50.4px;
+
 }
 
-nav a {
-    color: var(--color-text);
-    font-size: 16px;
-    line-height: 26px;
-    text-decoration: none;
-    padding-right: 20px;
+.admin .header-container nav a {
+    color: #999999;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 700;
+}
+
+.admin .header-container .menu-active {
+    color: #ffffff;
 }
 
 .main-container {
