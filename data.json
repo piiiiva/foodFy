@@ -131,6 +131,30 @@
         "Leve novamente ao forno até derreter a mussarela."
       ],
       "information": "Pizza de liquidificador é uma receita deliciosa e supersimples de preparar. Feita toda no liquidificador, ela é bem prática para o dia a dia. Aqui no TudoGostoso você também encontra diversas delícias práticas feitas no liquidificador: massa de panqueca, torta de frango de liquidificador, pão de queijo de liquidificador, bolo de banana, bolo de chocolate e muito mais!"
+    },
+    {
+      "title": "testeeeeeeee",
+      "image": "https://image.flaticon.com/icons/svg/2729/2729027.svg",
+      "author": "Rodrigo Piva",
+      "ingredients": [
+        "asdasdijasidouas"
+      ],
+      "preparations": [
+        "asdasdas"
+      ],
+      "information": "a"
+    },
+    {
+      "title": "testeeeeeeee",
+      "image": "https://images.unsplash.com/photo-1516992654410-9309d4587e94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+      "author": "Rodrigo Piva",
+      "ingredients": [
+        "teste"
+      ],
+      "preparations": [
+        "teste"
+      ],
+      "information": "teste"
     }
   ]
 }
