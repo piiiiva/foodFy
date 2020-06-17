@@ -1,8 +1,8 @@
 
-const data = require('../data.json')
+const data = require('../../../data.json')
 
 
-exports.index = function (req, res) {
+exports.index = (req, res) => {
     return res.render('admin/chefs/index')
 }
 
