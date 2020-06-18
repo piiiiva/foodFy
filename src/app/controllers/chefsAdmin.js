@@ -29,10 +29,25 @@ module.exports = {
             
             if (!chef) return res.send('Nenhum chef encontrado!!!')
 
-            chef.created_at = date(chef.created_at).format
-
             return res.render('admin/chefs/chef', { chef })
         })
 
     },
+    edit(req, res) {
+        Chef.find(req.params.id, function(chef) {
+            
+            if (!chef) return res.send('Nenhum chef encontrado!!!')
+
+            return res.render('admin/chefs/edit', { chef })
+        }) 
+    },
+    update(req, res) {
+        return
+        Chef.find(req.params.id, function(chef) {
+            
+            if (!chef) return res.send('Nenhum chef encontrado!!!')
+
+            return res.render('admin/chefs/edit', { chef })
+        })
+    }
 }
