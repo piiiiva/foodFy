@@ -41,13 +41,17 @@ module.exports = {
             return res.render('admin/chefs/edit', { chef })
         }) 
     },
-    update(req, res) {
-        return
-        Chef.find(req.params.id, function(chef) {
-            
-            if (!chef) return res.send('Nenhum chef encontrado!!!')
+    put(req, res) {
+        const keys = Object.keys(req.body)
+        
+        for (key of keys) {
+            if (req.body[key] == "") {
+                return res.send('Please, fill all fields')
+            }
+        }
 
-            return res.render('admin/chefs/edit', { chef })
+        Chef.update(req.body, function() {
+            return res.redirect(`/admin/chefs/${req.body.id}`)
         })
     }
 }

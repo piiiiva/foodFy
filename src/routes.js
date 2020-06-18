@@ -23,6 +23,6 @@ routes.get('/admin/chefs/create', chefsAdmin.create)
 routes.post('/admin/chefs', chefsAdmin.post)
 routes.get('/admin/chefs/:id', chefsAdmin.show)
 routes.get('/admin/chefs/:id/edit', chefsAdmin.edit)
-routes.put('/admin/chefs/:id', chefsAdmin.update)
+routes.put('/admin/chefs/:id', chefsAdmin.put)
 
 module.exports = routes
