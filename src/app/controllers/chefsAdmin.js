@@ -1,4 +1,5 @@
 const Chef = require('../models/Chef')
+const { date } = require('../../lib/utils')
 
 module.exports = {
     index(req, res) {
@@ -20,11 +21,18 @@ module.exports = {
         }
 
         Chef.create(req.body, function() {
-            console.log(req.body)
             return res.redirect('/admin/chefs')
         })
     },
     show(req, res) {
-        return res.render('admin/chefs/chef', { recipes: data.recipes })
+        Chef.find(req.params.id, function(chef) {
+            
+            if (!chef) return res.send('Nenhum chef encontrado!!!')
+
+            chef.created_at = date(chef.created_at).format
+
+            return res.render('admin/chefs/chef', { chef })
+        })
+
     },
 }

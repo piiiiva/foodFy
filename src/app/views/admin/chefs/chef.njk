@@ -13,14 +13,14 @@
     <div class="recipe-page admin chef">
         <main>
             <div class="header-contents">
-                <h2>Chef: Rodrigo Piva</h2>
-                <a class="form-button" href="/admin/recipes/{{recipe.id}}/edit">Editar chef</a>
+                <h2>Chef: {{chef.name}}</h2>
+                <a class="form-button" href="/admin/recipes/{{chef.id}}/edit">Editar chef</a>
             </div>
             <div class="avatar-image">
-                <img src="https://images.unsplash.com/photo-1569931727762-93dd90109ecd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="">
+                <img src="{{chef.avatar_url}}" alt="Imagem do chef {{chef.name}}">
             </div>
-            <p class="recipe-name">Rodrigo Piva</p>
-            <p class="recipe-author">4 receitas</p>
+            <p class="recipe-name">{{chef.name}}</p>
+            <p class="recipe-author">4 receitas - JOIN</p>
         </main>
 
         <section>

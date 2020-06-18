@@ -20,7 +20,7 @@
 
         <section class="cards admin">
             {% for chef in chefs %}
-                <div class="card" id="{{loop.index -1}}">
+                <div class="card" id="{{chef.id}}">
                     <div class="card-image">
                         <img src="{{chef.avatar_url}}" alt="Imagem de {{chef.name}}">
                     </div>
@@ -29,8 +29,7 @@
                         <a href="#">Visualizar</a>
                     </div>        
                 </div>
-            {% endfor %}
-            
+            {% endfor %}   
         </section>
     </div>
 {% endblock content %}
