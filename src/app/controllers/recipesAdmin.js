@@ -25,44 +25,39 @@ exports.post = function (req, res) {
             return res.send ("Por favor preencha todos o campos")
     }
 
-    console.log(req.body)
-    Recipe.create(req.body, function(recipe) {
+    const { title, image, ingredients, preparations, information } = req.body
+    
+    const ingredientsTrim = ingredients.map(ingredient => ingredient.trim())
+    const preparationsTrim = preparations.map(preparation => preparation.trim())
+
+    function isEmpty (value) {
+        newArray = value.filter(function(item){
+            return item != ""
+        })
+        return newArray
+    }
+
+    const serializedReqBody = {
+        ... req.body,
+        title: title.trim(),
+        image: image.trim(),
+        ingredients: isEmpty(ingredientsTrim), 
+        preparations: isEmpty(preparationsTrim), 
+        information: information.trim()
+    }
+ 
+    Recipe.create(serializedReqBody, function(recipe) {
         return res.redirect(`/admin/recipes/${recipe.id}`)
     })
-
-    
-    // const { title, image, author, ingredients, preparations, information } = req.body
-    
-    // const ingredientsReplaced = ingredients.map(ingredient =>
-    //     ingredient.trim() 
-    //     // ingredient.replace(/\s{2,}/g, ' ')
-    // )
-
-    // const preparationsReplaced = preparations.map(preparation =>
-    //     preparation.trim() 
-    // )
-
-    // function isEmpty (value) {
-    //     newArray = value.filter(function(item){
-    //         return item != ""
-    //     })
-    //     return newArray
-    // }
-
 }
 
 exports.show = function(req, res){
-    const recipeIndex = req.params.id
-    const foundRecipe = data.recipes[recipeIndex]
+    Recipe.find(req.params.id, function(recipe) {
+        if(!recipe) return res.send('Nenhuma receita encontrada!')
 
-    if (!foundRecipe) return res.send('Receita não encontrada!')
-
-    const recipe = {
-        id: recipeIndex,
-        ...foundRecipe
-    }
-
-    return res.render('admin/recipes/recipe', { recipe })
+        return res.render('admin/recipes/recipe', { recipe })
+        
+    })
 }
 
 exports.edit = function(req, res) {
