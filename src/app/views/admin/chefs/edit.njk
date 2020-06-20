@@ -17,7 +17,8 @@
             <input type="hidden" name="id" value={{chef.id}}>
         </form> 
         <form id="form-post" method="POST" action="/admin/chefs/{{chef.id}}?_method=PUT" >
-            {% include 'admin/chefs/_fieldsForm.njk'%}     
+            {% include 'admin/chefs/_fieldsForm.njk'%}
+            <input type="hidden" name="id" value={{chef.id}}>
         </form>
     </div>
     <script src="/formDelete.js"></script>

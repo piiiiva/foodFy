@@ -14,10 +14,11 @@
             </div>
         </div> 
         <form id="form-delete" action="/admin/recipes?_method=DELETE" method="POST">
-            <input type="hidden" name="id" value={{recipe.id}}>
+            <input type="hidden" name="id" value="{{recipe.id}}">
         </form>    
         <form id="form-post" action="/admin/recipes/{{recipe.id}}?_method=PUT" method="POST">
             {% include 'admin/recipes/_fieldsForm.njk'%}
+            <input type="hidden" name="id" value="{{recipe.id}}">
         </form>
     </div>
     
