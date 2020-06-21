@@ -5,7 +5,9 @@ module.exports = {
     all(callback) {
 
         const query = `
-        SELECT * FROM recipes
+        SELECT recipes.*, chefs.name AS chef_name 
+        FROM recipes
+        LEFT JOIN chefs ON (chefs.id = recipes.chef_id)
          `
 
         db.query(query, function(err, results) {
