@@ -7,16 +7,18 @@ module.exports ={
         })
     },    
     create(req, res) {
-        return res.render('admin/recipes/create')
+        Recipe.chefSelectOptions(function(options) {
+            return res.render('admin/recipes/create', { chefOptions: options })
+        })
     },    
     post(req, res) {
         const keys = Object.keys(req.body)
-    
+        console.log(req.body)
         for (key of keys) {
             if (req.body[key] == "")
                 return res.send ("Por favor preencha todos o campos")
         }
-    
+     
         const { title, image, ingredients, preparations, information } = req.body
         
         const ingredientsTrim = ingredients.map(ingredient => ingredient.trim())
@@ -53,7 +55,10 @@ module.exports ={
         Recipe.find(req.params.id, function(recipe) {
             if(!recipe) return res.send('Nenhuma receita encontrada!')
     
-            return res.render('admin/recipes/edit', { recipe })        
+            Recipe.chefSelectOptions(function(options){
+                console.log(recipe)
+                return res.render('admin/recipes/edit', { recipe, chefOptions: options })        
+            })
         })
     },    
     put(req, res) {

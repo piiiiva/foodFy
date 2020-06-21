@@ -460,9 +460,8 @@ form .item label {
 
 /* =FORM= */
 
-input, textarea {
+input, textarea, .select-form {
     width: 100%;
-    /* outline: none; */
 
     margin-top: 10px;
 

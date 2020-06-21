@@ -30,7 +30,7 @@ module.exports = {
         `
 
         const values = [
-            data.chef_id,
+            data.chef,
             data.image,
             data.title,
             data.ingredients,
@@ -38,7 +38,7 @@ module.exports = {
             data.information,
             date(Date.now()).iso
         ]
-
+    
         db.query(query, values, function(err, results) {
             if(err) throw `Database error! ${err}`
             
@@ -47,7 +47,10 @@ module.exports = {
     },
     find(id, callback) {
         const query = `
-            SELECT * FROM recipes WHERE id = $1
+            SELECT recipes.*, chefs.name AS chef_name
+            FROM recipes 
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            WHERE recipes.id = $1
         `
         
         db.query(query, [id], function(err, results) {
@@ -94,6 +97,16 @@ module.exports = {
 
             return callback()
         })
+    },
+    chefSelectOptions(callback) {
+        const query = `
+            SELECT name, id FROM chefs
+        `
 
+        db.query(query, function(err, results) {
+            if(err) throw `Database error ${err}`
+
+            callback(results.rows)
+        })
     }
 }

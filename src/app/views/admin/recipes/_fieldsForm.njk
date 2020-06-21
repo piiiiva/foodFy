@@ -19,13 +19,15 @@
 </div>
 
 <div class="item">
-    <label>Autor da receita</label>
-    <input 
-    type="text"
-    name="chef_id"
-    placeholder="Insira o nome do autor da receita"
-    value="{{recipe.chef_id}}"
-    >
+    <label for="chef_select">Autor da receita</label>
+    <select class="select-form" id="chef_select" name="chef" required>
+        <option value="">Selecione um chef para esta receita</option>
+        {% for chef in chefOptions %}
+            <option value="{{chef.id}}" {% if recipe.chef_id == chef.id %} selected {% endif %}>
+                {{chef.name}}
+            </option>
+        {% endfor %}
+    </select>
 </div>
 
 <div class="item">
