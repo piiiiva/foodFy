@@ -28,7 +28,7 @@ module.exports = {
         Chef.find(req.params.id, function(chef) {
             
             if (!chef) return res.send('Nenhum chef encontrado!!!')
-
+            console.log(chef)
             return res.render('admin/chefs/chef', { chef })
         })
 
