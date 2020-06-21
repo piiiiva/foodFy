@@ -5,6 +5,7 @@ module.exports = {
     index(req, res) {
 
         Chef.all(function(chefs) {
+            console.log(chefs)
             return res.render('admin/chefs/index', { chefs })
         })
     },    
@@ -28,8 +29,9 @@ module.exports = {
         Chef.find(req.params.id, function(chef) {
             
             if (!chef) return res.send('Nenhum chef encontrado!!!')
-            Chef.findRecipesByChef(req.params.id, function(recipes) {
 
+            Chef.findRecipesByChef(req.params.id, function(recipes) {
+                console.log(recipes)
                 return res.render('admin/chefs/chef', { chef, recipes })
             })
         })
