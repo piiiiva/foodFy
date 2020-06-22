@@ -1,10 +1,9 @@
 const recipeCards = document.querySelectorAll(".recipe_card")
 const chefCards = document.querySelectorAll(".chef_card")
+const currentPage = location.pathname
 
 
 for (let recipeCard of recipeCards) {
-    const currentPage = location.pathname
-
     recipeCard.addEventListener("click", function() {
         const cardId = recipeCard.getAttribute("id")
         
@@ -16,8 +15,6 @@ for (let recipeCard of recipeCards) {
 }
 
 for (let chefCard of chefCards) {
-    const currentPage = location.pathname
-
     chefCard.addEventListener("click", function() {
         const cardId = chefCard.getAttribute("id")
         
