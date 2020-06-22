@@ -27,11 +27,9 @@ module.exports = {
     },
     show(req, res) {
         Chef.find(req.params.id, function(chef) {
-            
             if (!chef) return res.send('Nenhum chef encontrado!!!')
 
             Chef.findRecipesByChef(req.params.id, function(recipes) {
-                console.log(recipes)
                 return res.render('admin/chefs/chef', { chef, recipes })
             })
         })
