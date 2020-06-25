@@ -11,11 +11,15 @@ module.exports = {
         return res.render('foodFy/about')
     },
     recipes(req, res) {
-        return res.render('foodFy/recipes', { recipes: data.recipes })
+        Recipe.all(function(recipes) {
+            return res.render('foodfy/recipes', { recipes })
+        })
     },
     show(req, res) {
-        const recipeIndex = req.params.index
-    
-        return res.render('foodFy/recipe', { recipe: data.recipes[recipeIndex] })
+        Recipe.find(req.params.id, function(recipe) {
+            if(!recipe) return res.send('Nenhuma receita encontrada!')
+            
+            return res.render('foodFy/recipe', { recipe })        
+        })
     },
 }

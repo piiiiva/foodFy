@@ -8,7 +8,7 @@ const chefsAdmin = require('./app/controllers/chefsAdmin')
 routes.get('/', foodFy.index)
 routes.get('/about', foodFy.about)
 routes.get('/recipes', foodFy.recipes)
-routes.get('/recipes/:index', foodFy.show)
+routes.get('/recipes/:id', foodFy.show)
 
 routes.get('/admin/recipes', recipesAdmin.index)
 routes.get('/admin/recipes/create', recipesAdmin.create)
