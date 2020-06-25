@@ -11,7 +11,7 @@ routes.get('/recipes', foodFy.recipes)
 routes.get('/recipes/:id', foodFy.show)
 
 routes.get('/chefs', chefsFoodFy.index)
-// routes.get('/chefs/:id', chefsFoodFy.show)
+routes.get('/chefs/:id', chefsFoodFy.show)
 
 routes.get('/admin/recipes', recipesAdmin.index)
 routes.get('/admin/recipes/create', recipesAdmin.create)
