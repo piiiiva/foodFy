@@ -3,12 +3,15 @@ const routes = express.Router()
 const foodFy = require('./app/controllers/foodFy')
 const recipesAdmin = require('./app/controllers/recipesAdmin')
 const chefsAdmin = require('./app/controllers/chefsAdmin')
-
+const chefsFoodFy = require('./app/controllers/chefsFoodfy')
 
 routes.get('/', foodFy.index)
 routes.get('/about', foodFy.about)
 routes.get('/recipes', foodFy.recipes)
 routes.get('/recipes/:id', foodFy.show)
+
+routes.get('/chefs', chefsFoodFy.index)
+// routes.get('/chefs/:id', chefsFoodFy.show)
 
 routes.get('/admin/recipes', recipesAdmin.index)
 routes.get('/admin/recipes/create', recipesAdmin.create)
