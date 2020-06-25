@@ -4,6 +4,9 @@
     <title>Receitas</title>
 {% endblock head %}
 
+{% block filterHeader %}
+    {% include '../../_filterHeader.njk' %}
+{% endblock filterHeader %}
 
 {% block content %}
     <section class="cards">
@@ -20,4 +23,3 @@
         {% endfor %}   
     </section>
 {% endblock content %}
-       

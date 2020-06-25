@@ -28,11 +28,6 @@ body {
     background-color: var(--color-background);
 }
 
-/* header { 
-    padding: 36px 0px;    
-     
-} */
-
 header .header-container {
     display: flex;
     align-items: center;
@@ -586,3 +581,23 @@ form .item .btn_delete_field {
 .admin .card .card-info a {
     margin-top: 10px;
 }
+
+/* === FILTER === */
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    gap: 8px;
+}
+
+header nav form input {
+    border: 1px solid #eee;
+    padding: 4px 8px;
+    margin: 0;
+}
+
