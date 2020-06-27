@@ -16,16 +16,16 @@
     
     <header>
         <div class="header-container">
-            <a href="/">
-                <img src="/assets/logo.png" alt="food-logo">
-            </a>
             <nav>
+                <a class="logo-link" href="/">
+                    <img src="/assets/logo.png" alt="food-logo">
+                </a>
                 <a href="/about">Sobre</a>
                 <a href="/recipes">Receitas</a>
                 <a href="/chefs">Chefs</a>
-                {% block filterHeader %}
-                {% endblock filterHeader %}
             </nav> 
+            {% block filterHeader %}
+            {% endblock filterHeader %}
         </div>
 
     </header> 
