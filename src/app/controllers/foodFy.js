@@ -26,7 +26,7 @@ module.exports = {
         let { filter, page, limit } = req.query
 
         page = page || 1
-        limit = limit || 3
+        limit = limit || 1
         let offset = limit * (page - 1)
 
         const params = {
@@ -40,7 +40,7 @@ module.exports = {
                     page
                 }
 
-                return res.render('foodFy/recipes/search', { filter, recipes, pagination })
+                return res.render('foodFy/recipes/search', { recipes, filter, pagination })
             }
         }
 

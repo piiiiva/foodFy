@@ -129,16 +129,23 @@ module.exports = {
         const { filter, limit, offset, callback } = params
 
         let query = "",
-            filterQuery = ""
+            filterQuery = "",
+            totalQuery = `(
+                SELECT count(*) FROM recipes
+            ) AS total`
             
         if (filter) {
             filterQuery = `
                 WHERE recipes.title iLIKE '%${filter}%'
             `
+            totalQuery = `(
+                SELECT count(*) FROM recipes
+                ${filterQuery}
+            ) AS total`
         }
 
         query = `
-            SELECT recipes.*, chefs.name AS chef_nameTeste
+            SELECT recipes.*, ${totalQuery}, chefs.name AS chef_name
             FROM recipes 
             LEFT JOIN chefs ON (chefs.id = recipes.chef_id)
             ${filterQuery}
