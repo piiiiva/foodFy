@@ -74,7 +74,6 @@ module.exports = {
 
             callback(results.rows)
         })
-
     },
     update(data, callback) {
         const query = `
@@ -122,6 +121,32 @@ module.exports = {
 
         db.query(query, function(err, results) {
             if(err) throw `Database error ${err}`
+
+            callback(results.rows)
+        })
+    },
+    paginate(params) {
+        const { filter, limit, offset, callback } = params
+
+        let query = "",
+            filterQuery = ""
+            
+        if (filter) {
+            filterQuery = `
+                WHERE recipes.title iLIKE '%${filter}%'
+            `
+        }
+
+        query = `
+            SELECT recipes.*, chefs.name AS chef_nameTeste
+            FROM recipes 
+            LEFT JOIN chefs ON (chefs.id = recipes.chef_id)
+            ${filterQuery}
+            LIMIT $1 OFFSET $2
+        `
+        
+        db.query(query, [limit, offset], function(err, results) {
+            if (err) throw `Database Error ${err}`
 
             callback(results.rows)
         })

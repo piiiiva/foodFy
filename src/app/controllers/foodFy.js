@@ -23,17 +23,27 @@ module.exports = {
         })
     },
     search(req, res) {
-        const { filter } = req.query
+        let { filter, page, limit } = req.query
 
-        if ( filter ) {
-            Recipe.findBy(filter, function(recipes) {
-                console.log(recipes)
-                return res.render('foodFy/recipes/search', { filter, recipes })
-            })
-        } else {
-            Recipe.all(function(recipes) {
-                return res.render('foodFy/recipes/search', { recipes })
-            })    
+        page = page || 1
+        limit = limit || 3
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(recipes) {
+                const pagination = {
+                    total: Math.ceil(Number(recipes[0].total / limit)),
+                    page
+                }
+
+                return res.render('foodFy/recipes/search', { filter, recipes, pagination })
+            }
         }
+
+        Recipe.paginate(params)
     }
 }
