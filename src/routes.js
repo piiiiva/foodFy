@@ -8,6 +8,7 @@ const chefsFoodFy = require('./app/controllers/chefsFoodfy')
 routes.get('/', foodFy.index)
 routes.get('/about', foodFy.about)
 routes.get('/recipes', foodFy.recipes)
+routes.get('/recipes/search', foodFy.search)
 routes.get('/recipes/:id', foodFy.show)
 
 routes.get('/chefs', chefsFoodFy.index)
