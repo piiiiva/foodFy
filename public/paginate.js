@@ -2,7 +2,7 @@ function paginate(selectedPage, totalPages) {
     let pages = [],
         oldPage
 
-    for (let currentPage = 1; currentPage < totalPages; currentPage++) {
+    for (let currentPage = 1; currentPage <= totalPages; currentPage++) {
         
         const firstAndLastPage = currentPage == 1 || currentPage == totalPages
         const pagesAfterSelectedPage = currentPage <= selectedPage + 2
@@ -28,7 +28,6 @@ function paginate(selectedPage, totalPages) {
 }
 
 function createPagination(pagination) {
-
     const filter = pagination.dataset.filter
     const page = Number(pagination.dataset.page)
     const total = Number(pagination.dataset.total)
