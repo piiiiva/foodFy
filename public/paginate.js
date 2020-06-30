@@ -56,3 +56,15 @@ const pagination = document.querySelector(".pagination")
 if (pagination) {
     createPagination(pagination)
 }
+
+
+const currentPageOfPagination = location.href
+const paginationMenuItems = document.querySelectorAll('.pagination a')
+console.log(paginationMenuItems)
+console.log(currentPageOfPagination)
+ 
+for (paginationItem of paginationMenuItems) {  
+    if (currentPageOfPagination.includes(paginationItem.getAttribute("href"))) {
+        paginationItem.classList.add("pagination-menu-active")        
+    } 
+}

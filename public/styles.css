@@ -618,3 +618,32 @@ header form input:placeholder-shown {
     line-height: 16px;
 }
 
+/* === Pagination === */
+.pagination {
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination a,
+.pagination span {
+    text-decoration: none;
+    color: #6558c3;
+}
+
+.pagination a + a,
+.pagination span + a,
+.pagination span {
+    margin-left: 16px;
+}
+
+.pagination a:hover {
+    filter: brightness(0.7);
+    font-weight: 700;
+}
+
+.pagination a.pagination-menu-active {
+    filter: brightness(0.9);
+    font-weight: 700;
+}
