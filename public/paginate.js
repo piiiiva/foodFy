@@ -58,10 +58,9 @@ if (pagination) {
 }
 
 
+// Show active page
 const currentPageOfPagination = location.href
 const paginationMenuItems = document.querySelectorAll('.pagination a')
-console.log(paginationMenuItems)
-console.log(currentPageOfPagination)
  
 for (paginationItem of paginationMenuItems) {  
     if (currentPageOfPagination.includes(paginationItem.getAttribute("href"))) {

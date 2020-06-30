@@ -8,6 +8,7 @@ module.exports = {
         SELECT recipes.*, chefs.name AS chef_name 
         FROM recipes
         LEFT JOIN chefs ON (chefs.id = recipes.chef_id)
+        ORDER BY recipes.created_at
          `
 
         db.query(query, function(err, results) {
